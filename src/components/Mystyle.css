@@ -1,0 +1,45 @@
+body{
+   background-color: lightgrey;
+}
+.Logo {
+   height: 50px;
+   width: 100px;
+   display: inline-block;
+   margin-left: 30px;
+}
+
+.ProfileTop {
+   height: 50px;
+   width: 50px;
+   display: inline-block;
+   margin-left: 30px;
+   margin-right: 30px;
+}
+
+.NavUser {
+   color: #1baed6;
+}
+
+.sidebar {
+   width: 20%;
+   height: calc(100vh - 50px);
+   background-color: white;
+   top: 50px;
+}
+ 
+ .sidebarWrapper {
+   padding: 10px;
+   margin-left: 15px;
+   
+ }
+
+ .sidebarList{
+    text-align: left;
+    font-size: 14px;
+   font-weight: bold;
+   color: black;
+ }
+
+ .sidebarIcon{
+   margin-right: 5px;
+ }
