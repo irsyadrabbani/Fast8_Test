@@ -1,7 +1,6 @@
 import React from 'react'
 import {Container, Image, Navbar} from "react-bootstrap";
 import  './Mystyle.css';
-
 const Topbar = () => {
   return (
       <div>

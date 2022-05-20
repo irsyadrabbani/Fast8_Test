@@ -1,11 +1,12 @@
 import React from 'react'
-import { Container, ListGroup, Nav, } from "react-bootstrap";
+import { Col, Container, ListGroup, Nav, } from "react-bootstrap";
 import { FaHome, FaCalendarAlt, FaUsers } from "react-icons/fa";
 import  './Mystyle.css';
 
 
 const Sidebar = () => {
   return (
+      <Col>
     <Nav defaultActiveKey="/home" className="sidebar">
         <Container className='sidebarWrapper'>
         <Nav.Link className='sidebarList'><FaHome className='sidebarIcon'/>Beranda</Nav.Link>
@@ -13,6 +14,7 @@ const Sidebar = () => {
         <Nav.Link className='sidebarList'><FaCalendarAlt className='sidebarIcon'/>Daily Attendance</Nav.Link>
         </Container>
     </Nav>
+      </Col>
   )
 }
 

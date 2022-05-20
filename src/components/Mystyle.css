@@ -21,8 +21,8 @@ body{
 }
 
 .sidebar {
-   width: 20%;
-   height: calc(100vh - 50px);
+   width: 100%;
+   height: calc(150vh - 50px);
    background-color: white;
    top: 50px;
 }
@@ -41,5 +41,53 @@ body{
  }
 
  .sidebarIcon{
-   margin-right: 5px;
+   margin-right: 10px;
  }
+
+ .cardContainer {
+    width: 25%;
+    margin-top: 30px;
+    margin-bottom: 10%;
+    ;
+
+ }
+
+ .cardHeader {
+   justify-content: left;
+   text-align: left;
+   font-size: 14px;
+ }
+
+ .personelID{
+    margin-left: 5px;
+    color: #1baed6;
+    justify-content: left;
+    text-align: left;
+ }
+
+ .PersonelIcon{
+    margin-left: 50px;
+}
+
+.PersonelProfile{
+   justify-content: center;
+   align-items: center;
+   width: 100px;
+   height: 100px;
+   margin-bottom: 5px;
+}
+
+.PersonelDetail{
+   justify-content: left;
+   text-align: left;
+   font-size: 14px;
+   margin-left: -20px;
+}
+
+.PersonelDetailTitle{
+   justify-content: left;
+   text-align: left;
+   font-size: 14px;
+   margin-bottom: 1px;
+}
+
