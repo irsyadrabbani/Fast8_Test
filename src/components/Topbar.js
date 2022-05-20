@@ -1,10 +1,11 @@
 import React from 'react'
 import {Container, Image, Navbar} from "react-bootstrap";
 import  './Mystyle.css';
+
 const Topbar = () => {
   return (
       <div>
-    <Navbar>
+    <Navbar bg="white" variant="light">
     <Container fluid>
       <Navbar.Brand>
         <Image
