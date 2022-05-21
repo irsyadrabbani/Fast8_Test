@@ -53,9 +53,9 @@ body{
  }
 
  .cardHeader {
-   justify-content: left;
    text-align: left;
    font-size: 14px;
+   background-color: white;
  }
 
  .personelID{
@@ -88,6 +88,28 @@ body{
    justify-content: left;
    text-align: left;
    font-size: 14px;
+   margin-bottom: 1px;
+}
+
+.Header {
+   margin-top: 30px;
+}
+
+.HeaderBrand{
+   justify-content: left;
+   text-align: left;
+}
+.HeaderTitle {
+   color: #1baed6;
+   font-weight: bold;
+   font-size: 20px;
+   margin-bottom: 1px;
+}
+
+.HeaderText {
+   font-size: 16px;
+   font-weight: 500;
+   color: gray;
    margin-bottom: 1px;
 }
 
