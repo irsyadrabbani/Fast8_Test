@@ -1,11 +1,36 @@
 import React from 'react'
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, FormControl, Image, Navbar, Row, Stack } from 'react-bootstrap';
 import { BsThreeDots } from "react-icons/bs";
 
 const PersonelList = () => {
   return (
       <Col xs lg="9">
-      <Container >
+          <Container fluid>
+          <Row>
+              <Container fluid>
+            <Navbar bg="white" expand="lg" className='Header'>
+            <Container fluid>
+                <Navbar.Brand className='HeaderBrand'>
+                <p className='HeaderTitle'>PERSONNEL LIST</p>
+                <p className='HeaderText'>List of all Personnels</p>
+                </Navbar.Brand>
+                <Form className="d-flex">
+                    <FormControl
+                    type="search"
+                    placeholder="Find Personnel"
+                    className="me-2"
+                    aria-label="Search"
+                    />
+                    <Button variant="primary">Primary</Button>{' '}
+                </Form>
+            </Container>
+            </Navbar>
+                    </Container>
+          </Row>
+          
+          <Row>
+              <Container fluid>
+
     <Card className='cardContainer'>
         <Card.Header className='cardHeader'>       
             <a>
@@ -18,7 +43,7 @@ const PersonelList = () => {
         </Card.Header>
         <Card.Body>
         <Image className='PersonelProfile' src="/profile.png" roundedCircle/>
-        <Container className='PersonelDetail'>
+        <Container className='PersonelDetail' fluid>
             <Card.Title className='PersonelDetailTitle'>
                 Name
             </Card.Title>
@@ -46,7 +71,10 @@ const PersonelList = () => {
         </Container>
         </Card.Body>
     </Card>
-      </Container>
+              </Container>
+          </Row>
+          
+          </Container>
       </Col>
   )
 }
