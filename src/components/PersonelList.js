@@ -1,9 +1,26 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Form, FormControl, Image, InputGroup, Navbar, Row, Stack } from 'react-bootstrap';
 import { BsThreeDots } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 
 const PersonelList = () => {
+    const [personnels, setPersonnels] = useState([])
+
+    const getPersonnels = async () => {
+        try {
+            const response = await axios.get('https://randomuser.me/api/?results=28')
+            setPersonnels(response.data.results);
+            console.log(response.data.results);
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    useEffect(() =>{
+        getPersonnels();
+    }, [0,4])
+
   return (
       <Col xs lg="9">
           <Container fluid>
@@ -27,51 +44,56 @@ const PersonelList = () => {
             </Container>
             </Navbar>
                     </Container>
-          </Row>
-          
+          </Row>      
           <Row>
-              <Container fluid>
-
-        <Card className='cardContainer'>
-            <Card.Header className='cardHeader'>       
-                <a>
-                Personel ID :
-                <span className='personelID'>
-                    12345
-                </span>
-                </a>
-                <BsThreeDots className='PersonelIcon' />
-            </Card.Header>
-            <Card.Body>
-                <Image className='PersonelProfile' src="/profile.png" roundedCircle/>
-                <Container className='PersonelDetail' fluid>
-                    <Card.Title className='PersonelDetailTitle'>
-                        Name
-                    </Card.Title>
-                    <Card.Text >
-                        Irsyad
-                    </Card.Text>
-                    <Card.Title className='PersonelDetailTitle'>
-                        Phone Number
-                    </Card.Title>
-                    <Card.Text >
-                        0123456789
-                    </Card.Text>
-                    <Card.Title className='PersonelDetailTitle'>
-                        Birthday
-                    </Card.Title>
-                    <Card.Text >
-                        19 May 1999
-                    </Card.Text>
-                    <Card.Title className='PersonelDetailTitle'>
-                        Email
-                    </Card.Title>
-                    <Card.Text >
-                        irsyad@gmail.co.id
-                    </Card.Text>
-                </Container>
-            </Card.Body>
-        </Card>
+              <Container fluid className='d-flex'>
+                  {
+                      personnels.slice(0,4).map((personnel, index) => {
+                          return (
+                              <Card className='cardContainer' key={index}>
+                        <Card.Header className='cardHeader'>       
+                            <a>
+                            Personel ID :
+                            <span className='personelID'>
+                                {personnel.id.value}
+                            </span>
+                            </a>
+                            <BsThreeDots className='PersonelIcon' />
+                        </Card.Header>
+                        <Card.Body>
+                            <Image className='PersonelProfile' src={personnel.picture.medium} roundedCircle/>
+                            <Container className='PersonelDetail' fluid>
+                                <Card.Title className='PersonelDetailTitle'>
+                                    Name
+                                </Card.Title>
+                                <Card.Text >
+                                {personnel.name.first}
+                                {personnel.name.last}
+                                </Card.Text>
+                                <Card.Title className='PersonelDetailTitle'>
+                                    Phone Number
+                                </Card.Title>
+                                <Card.Text >
+                                {personnel.phone}
+                                </Card.Text>
+                                <Card.Title className='PersonelDetailTitle'>
+                                    Birthday
+                                </Card.Title>
+                                <Card.Text >
+                                {personnel.dob.date}
+                                </Card.Text>
+                                <Card.Title className='PersonelDetailTitle'>
+                                    Email
+                                </Card.Title>
+                                <Card.Text >
+                                {personnel.email}
+                                </Card.Text>
+                            </Container>
+                        </Card.Body>
+                    </Card>
+                        )
+                    })
+                }
               </Container>
           </Row>
           </Container>
