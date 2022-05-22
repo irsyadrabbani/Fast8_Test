@@ -3,7 +3,6 @@ import {Container, Image, Navbar} from "react-bootstrap";
 import  './Mystyle.css';
 const Topbar = () => {
   return (
-      <div>
     <Navbar bg="white" variant="light">
     <Container fluid>
       <Navbar.Brand>
@@ -25,7 +24,7 @@ const Topbar = () => {
       </Navbar.Collapse>
     </Container>
   </Navbar>
-          </div>
+          
 
 
   )
