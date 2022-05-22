@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Form, FormControl, Image, InputGroup, Navbar, Row, Stack } from 'react-bootstrap';
-import { BsThreeDots } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
+import { BsThreeDots, BsPlusLg } from "react-icons/bs";
 
 const PersonelList = () => {
     const [personnels, setPersonnels] = useState([])
@@ -19,7 +18,11 @@ const PersonelList = () => {
 
     useEffect(() =>{
         getPersonnels();
-    }, [0,4])
+    }, [])
+
+    const handlePageClick = (data) => {
+        console.log(data.selected)
+    }
 
   return (
       <Col xs lg="9">
@@ -32,15 +35,15 @@ const PersonelList = () => {
                 <p className='HeaderTitle'>PERSONNEL LIST</p>
                 <p className='HeaderText'>List of all Personnels</p>
                 </Navbar.Brand>
-                <Form className="d-flex">
+                <Form className="SearchInput">
                     <FormControl
                     type="search"
                     placeholder="Find Personnel"
                     className="me-2"
                     aria-label="Search"
                     />
-                    <Button variant="primary">Primary</Button>{' '}
                 </Form>
+                    <Button variant="info" className='btnAdd'>Add Personel <BsPlusLg /></Button>
             </Container>
             </Navbar>
                     </Container>

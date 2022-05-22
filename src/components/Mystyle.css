@@ -45,10 +45,10 @@ body{
  }
 
  .cardContainer {
-    width: 25%;
+    width: 30%;
     margin-top: 30px;
     margin-bottom: 10%;
-    ;
+    margin-inline: 5px;
 
  }
 
@@ -113,3 +113,12 @@ body{
    margin-bottom: 1px;
 }
 
+.btnAdd {
+   font-weight: 500;
+   color: white;
+}
+
+.SearchInput {
+   justify-content: flex-end;
+   margin-left: 40%;
+}
